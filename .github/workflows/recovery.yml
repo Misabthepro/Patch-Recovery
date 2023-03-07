@@ -21,13 +21,13 @@ jobs:
 
     - name: Prepare the environment
       run: |
-        sudo apt install git wget lz4 tar openssl python3 -y
+        sudo apt install git wget lz4 axel tar openssl python3 -y
 
     - name: Fetch image from URL
       run: |
         ls
         pwd
-        wget ${{github.event.inputs.RECOVERY_URL }}
+        axel "https://download.wetransfer.com/eugv/158c0a8bcb052142f3cf081fd6992e3e20230307044649/8e83c0bae6e191050d8220a516b906eda6afed18/recovery.img.lz4?token=eyJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2NzgxNjQ0NTcsImV4cCI6MTY3ODE2NTA1NywidW5pcXVlIjoiMTU4YzBhOGJjYjA1MjE0MmYzY2YwODFmZDY5OTJlM2UyMDIzMDMwNzA0NDY0OSIsImZpbGVuYW1lIjoicmVjb3ZlcnkuaW1nLmx6NCIsIndheWJpbGxfdXJsIjoiaHR0cDovL3N0b3JtLnByb2R1Y3Quc3ZjLmNsdXN0ZXIubG9jYWw6OTI5Mi9hcGkvd2F5YmlsbHM_c2lnbmVkX3dheWJpbGxfaWQ9ZXlKZmNtRnBiSE1pT25zaWJXVnpjMkZuWlNJNklrSkJhRXBKYTBWNldUSlZlRTlFVm10TlYxSnNXbFJGZWxsVVdtMVpWMGt4V2tSSk1FNVhUbWxQVjBadFRWUnJOVmxVYXpWWk1rNXBUbFJhYWxwVVVtaE9lbFpvV1hwbk1VNVVSWGxPYW1kNFdWUlJNMDV0U1VkUFoxcEdVbWM5UFNJc0ltVjRjQ0k2SWpJd01qTXRNRE10TURkVU1EUTZOVGM2TXpjdU1EWTRXaUlzSW5CMWNpSTZJbmRoZVdKcGJHeGZhV1FpZlgwLS00NjU0MWUxNzk1ZDNkNWE1Y2FjNzAyMGE5MmQ0M2M4MzVhMTU0ZjBmYmIzYWZiMjU3ZjU2NmY0ODdiOGEzNzcxIiwiZmluZ2VycHJpbnQiOiI4ZTgzYzBiYWU2ZTE5MTA1MGQ4MjIwYTUxNmI5MDZlZGE2YWZlZDE4IiwiY2FsbGJhY2siOiJ7XCJmb3JtZGF0YVwiOntcImFjdGlvblwiOlwiaHR0cDovL2Zyb250ZW5kLnNlcnZpY2UuZXUtd2VzdC0xLndldHJhbnNmZXIubmV0L3dlYmhvb2tzL2JhY2tlbmRcIn0sXCJmb3JtXCI6e1widHJhbnNmZXJfaWRcIjpcIjE1OGMwYThiY2IwNTIxNDJmM2NmMDgxZmQ2OTkyZTNlMjAyMzAzMDcwNDQ2NDlcIixcImRvd25sb2FkX2lkXCI6MTgwMzYzNDUyNDJ9fSJ9.yu3SraCe5g7sIli_WXAu2tVOQxxCeQQ5gXv-dZIf_j4&cf=y"
 
     - name: Patch Process-1
       run: |
